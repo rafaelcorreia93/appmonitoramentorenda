@@ -1,0 +1,101 @@
+{
+  "expo": {
+    "name": "monitoramentorenda",
+    "slug": "monitoramentorenda",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vivest.monitoramentorendav2",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.vivest.monitoramentorendav2"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/OpenSans-Bold.ttf",
+            "./assets/fonts/OpenSans-Regular.ttf",
+            "./assets/fonts/OpenSans-BoldItalic.ttf",
+            "./assets/fonts/OpenSans-ExtraBold.ttf",
+            "./assets/fonts/OpenSans-ExtraBoldItalic.ttf",
+            "./assets/fonts/OpenSans-Italic.ttf",
+            "./assets/fonts/OpenSans-Light.ttf",
+            "./assets/fonts/OpenSans-LightItalic.ttf",
+            "./assets/fonts/OpenSans-Medium.ttf",
+            "./assets/fonts/OpenSans-MediumItalic.ttf",
+            "./assets/fonts/OpenSans-SemiBold.ttf",
+            "./assets/fonts/OpenSans-SemiBoldItalic.ttf",
+            "./assets/fonts/Campton-Black.otf",
+            "./assets/fonts/Campton-Bold.otf",
+            "./assets/fonts/Campton-Book.otf",
+            "./assets/fonts/Campton-ExtraBold.otf",
+            "./assets/fonts/Campton-ExtraLight.otf",
+            "./assets/fonts/Campton-Light.otf",
+            "./assets/fonts/Campton-Medium.otf",
+            "./assets/fonts/Campton-SemiBold.otf",
+            "./assets/fonts/Campton-Thin.otf"
+          ]
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
+      ],
+      [
+        "expo-custom-assets",
+        {
+          "assetsPaths": [
+            "./assets/resources/"
+          ]
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-secure-store",
+      "expo-custom-assets",
+      "expo-build-properties"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "1b8287bc-37f1-47d1-9236-5cff81ef56e9"
+      }
+    }
+  }
+}
