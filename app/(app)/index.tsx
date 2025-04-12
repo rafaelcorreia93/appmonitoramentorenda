@@ -21,7 +21,7 @@ const DETALHES_KEY = 'detalhe-produto'; // Nova chave para armazenar o PRODUTO
 // ----------------------------------------------------
 
 // --- Tipos para os dados esperados---
-type UserDetails = {
+export type UserDetails = {
     id: number;
     cpf: string;
     nome: string;
