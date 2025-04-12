@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,6 @@
 		5298230D09494BCAA184F228 /* Campton-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C78D017264FA18325385F /* Campton-ExtraLight.otf */; };
 		56A3876DE07944A2AB485B01 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47058E91B64C24ABCD1E6A /* noop-file.swift */; };
 		591F35DC35BF4EBAA89B0EE9 /* Campton-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3B52ABE49E545F288D4479D /* Campton-Light.otf */; };
-		5B02E9679CD34A1D8DC61402 /* test.riv in Resources */ = {isa = PBXBuildFile; fileRef = 3C5E272ABAAC44968F69FE5B /* test.riv */; };
 		60A901C828AB4715888597AD /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7194E52FB30A4F83BCABF311 /* OpenSans-Medium.ttf */; };
 		868D8F955581445482258169 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634D859792C48CABD73687F /* OpenSans-Light.ttf */; };
 		8F0803A29E1240F1922257BD /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F392636E6D1F46C6853B1BCA /* OpenSans-SemiBoldItalic.ttf */; };
@@ -41,43 +40,42 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05F8BDA6B21F486A950D0961 /* Campton-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Medium.otf"; path = "../assets/fonts/Campton-Medium.otf"; sourceTree = "<group>"; };
-		0634D859792C48CABD73687F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		05F8BDA6B21F486A950D0961 /* Campton-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Medium.otf"; path = "../assets/fonts/Campton-Medium.otf"; sourceTree = "<group>"; };
+		0634D859792C48CABD73687F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MonitoramentodeRenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoramentodeRenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MonitoramentodeRenda/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MonitoramentodeRenda/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MonitoramentodeRenda/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MonitoramentodeRenda/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MonitoramentodeRenda/main.m; sourceTree = "<group>"; };
-		2D9EF41767D2461EA8D380C8 /* Campton-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Bold.otf"; path = "../assets/fonts/Campton-Bold.otf"; sourceTree = "<group>"; };
+		2D9EF41767D2461EA8D380C8 /* Campton-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Bold.otf"; path = "../assets/fonts/Campton-Bold.otf"; sourceTree = "<group>"; };
 		327E8CDB15014636997D8989 /* MonitoramentodeRenda-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "MonitoramentodeRenda-Bridging-Header.h"; path = "MonitoramentodeRenda/MonitoramentodeRenda-Bridging-Header.h"; sourceTree = "<group>"; };
-		376F163CB9404CF38A7C85E1 /* Campton-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-SemiBold.otf"; path = "../assets/fonts/Campton-SemiBold.otf"; sourceTree = "<group>"; };
-		3A9C78D017264FA18325385F /* Campton-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-ExtraLight.otf"; path = "../assets/fonts/Campton-ExtraLight.otf"; sourceTree = "<group>"; };
-		3C5E272ABAAC44968F69FE5B /* test.riv */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = test.riv; path = "/Users/rafaelcorreia/monitor-renda-v2/monitoramentorenda/ios/Assets/test.riv"; sourceTree = "<group>"; };
+		376F163CB9404CF38A7C85E1 /* Campton-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-SemiBold.otf"; path = "../assets/fonts/Campton-SemiBold.otf"; sourceTree = "<group>"; };
+		3A9C78D017264FA18325385F /* Campton-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-ExtraLight.otf"; path = "../assets/fonts/Campton-ExtraLight.otf"; sourceTree = "<group>"; };
 		4C47058E91B64C24ABCD1E6A /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "MonitoramentodeRenda/noop-file.swift"; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-MonitoramentodeRenda.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonitoramentodeRenda.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F971948F2B14CBBA97385F5 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		5F971948F2B14CBBA97385F5 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-MonitoramentodeRenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoramentodeRenda.debug.xcconfig"; path = "Target Support Files/Pods-MonitoramentodeRenda/Pods-MonitoramentodeRenda.debug.xcconfig"; sourceTree = "<group>"; };
-		7194E52FB30A4F83BCABF311 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Medium.ttf"; path = "../assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		7194E52FB30A4F83BCABF311 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Medium.ttf"; path = "../assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-MonitoramentodeRenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoramentodeRenda.release.xcconfig"; path = "Target Support Files/Pods-MonitoramentodeRenda/Pods-MonitoramentodeRenda.release.xcconfig"; sourceTree = "<group>"; };
-		7EF86D9643E74A4999847A5D /* Campton-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Thin.otf"; path = "../assets/fonts/Campton-Thin.otf"; sourceTree = "<group>"; };
-		832F9EA3E0074CE19DDC869D /* Campton-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Black.otf"; path = "../assets/fonts/Campton-Black.otf"; sourceTree = "<group>"; };
-		8A305976B3CB4BB9B172E745 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		8B5133CDCF53498085204E94 /* Campton-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Book.otf"; path = "../assets/fonts/Campton-Book.otf"; sourceTree = "<group>"; };
-		8E010CFCE0C5AF0CEB14CD11 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = MonitoramentodeRenda/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7EF86D9643E74A4999847A5D /* Campton-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Thin.otf"; path = "../assets/fonts/Campton-Thin.otf"; sourceTree = "<group>"; };
+		832F9EA3E0074CE19DDC869D /* Campton-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Black.otf"; path = "../assets/fonts/Campton-Black.otf"; sourceTree = "<group>"; };
+		8A305976B3CB4BB9B172E745 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		8B5133CDCF53498085204E94 /* Campton-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Book.otf"; path = "../assets/fonts/Campton-Book.otf"; sourceTree = "<group>"; };
+		8E010CFCE0C5AF0CEB14CD11 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MonitoramentodeRenda/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = MonitoramentodeRenda/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B3169072E99449348B74E996 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		B8FC1B61F46B40068B305DFE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		BA3756F6EA63442996EB5613 /* OpenSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-MediumItalic.ttf"; path = "../assets/fonts/OpenSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B3169072E99449348B74E996 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B8FC1B61F46B40068B305DFE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		BA3756F6EA63442996EB5613 /* OpenSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-MediumItalic.ttf"; path = "../assets/fonts/OpenSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		D4FE6FEB8009458F9DDC4C29 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		D959DED1D0DA4333AA253E5C /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		E0C9BF35EDC7406FBEEF924F /* Campton-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-ExtraBold.otf"; path = "../assets/fonts/Campton-ExtraBold.otf"; sourceTree = "<group>"; };
+		D4FE6FEB8009458F9DDC4C29 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		D959DED1D0DA4333AA253E5C /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		E0C9BF35EDC7406FBEEF924F /* Campton-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-ExtraBold.otf"; path = "../assets/fonts/Campton-ExtraBold.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F33BFBA0ECC5491FAC140429 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		F392636E6D1F46C6853B1BCA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		F3B52ABE49E545F288D4479D /* Campton-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Light.otf"; path = "../assets/fonts/Campton-Light.otf"; sourceTree = "<group>"; };
-		F7B48FFDB7824C18A3B677E3 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		F33BFBA0ECC5491FAC140429 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F392636E6D1F46C6853B1BCA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		F3B52ABE49E545F288D4479D /* Campton-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Campton-Light.otf"; path = "../assets/fonts/Campton-Light.otf"; sourceTree = "<group>"; };
+		F7B48FFDB7824C18A3B677E3 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MonitoramentodeRenda/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +133,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
-				3C5E272ABAAC44968F69FE5B /* test.riv */,
 				D3ADDFBECA42475B839C06B2 /* Resources */,
 			);
 			indentWidth = 2;
@@ -194,7 +191,6 @@
 				7EF86D9643E74A4999847A5D /* Campton-Thin.otf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
@@ -278,7 +274,6 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				5B02E9679CD34A1D8DC61402 /* test.riv in Resources */,
 				9AF7548B26E54FDBB3784DB9 /* OpenSans-Bold.ttf in Resources */,
 				101114748A914AB3B3F281EA /* OpenSans-Regular.ttf in Resources */,
 				9D989C388AAC4DBC90E87231 /* OpenSans-BoldItalic.ttf in Resources */,
@@ -453,7 +448,10 @@
 				);
 				INFOPLIST_FILE = MonitoramentodeRenda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -462,7 +460,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivest.monitoramentorendav2;
-				PRODUCT_NAME = "MonitoramentodeRenda";
+				PRODUCT_NAME = MonitoramentodeRenda;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoramentodeRenda/MonitoramentodeRenda-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -481,7 +479,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = MonitoramentodeRenda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -490,7 +491,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivest.monitoramentorendav2;
-				PRODUCT_NAME = "MonitoramentodeRenda";
+				PRODUCT_NAME = MonitoramentodeRenda;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoramentodeRenda/MonitoramentodeRenda-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,14 +547,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -602,13 +603,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
