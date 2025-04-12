@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "monitoramentorenda.app"
-               BlueprintName = "monitoramentorenda"
-               ReferencedContainer = "container:monitoramentorenda.xcodeproj">
+               BuildableName = "MonitoramentodeRenda.app"
+               BlueprintName = "MonitoramentodeRenda"
+               ReferencedContainer = "container:MonitoramentodeRenda.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "monitoramentorendaTests.xctest"
-               BlueprintName = "monitoramentorendaTests"
-               ReferencedContainer = "container:monitoramentorenda.xcodeproj">
+               BuildableName = "MonitoramentodeRendaTests.xctest"
+               BlueprintName = "MonitoramentodeRendaTests"
+               ReferencedContainer = "container:MonitoramentodeRenda.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "monitoramentorenda.app"
-            BlueprintName = "monitoramentorenda"
-            ReferencedContainer = "container:monitoramentorenda.xcodeproj">
+            BuildableName = "MonitoramentodeRenda.app"
+            BlueprintName = "MonitoramentodeRenda"
+            ReferencedContainer = "container:MonitoramentodeRenda.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "monitoramentorenda.app"
-            BlueprintName = "monitoramentorenda"
-            ReferencedContainer = "container:monitoramentorenda.xcodeproj">
+            BuildableName = "MonitoramentodeRenda.app"
+            BlueprintName = "MonitoramentodeRenda"
+            ReferencedContainer = "container:MonitoramentodeRenda.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
