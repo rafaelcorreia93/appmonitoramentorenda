@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { View, Text, StyleSheet, TextInputProps } from 'react-native';
-import { TextInputMask, TextInputMaskOptionProp } from 'react-native-masked-text';
+import { TextInputMask, TextInputMaskOptionProp, TextInputMaskMethods } from 'react-native-masked-text';
 
 // Estendendo TextInputProps para poder passar outras props padrão do TextInput
 interface CurrencyInputProps extends TextInputProps {
@@ -18,6 +18,8 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   style, // Permite passar estilos customizados para o input
   ...rest // Restante das props do TextInput (placeholder, autoFocus, etc.)
 }) => {
+  const inputRef = useRef<TextInputMask>(null);
+
   // Estado para o valor formatado (string) que será exibido no input
 
   // Opções padrão da máscara para Real Brasileiro (BRL)
@@ -83,12 +85,18 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
 
 
   // Handler de mudança: AGORA é o principal responsável por atualizar formattedValue
-  const handleTextChange = (maskedText: string, rawText: string | undefined) => {
-    // 1. Atualiza o valor exibido diretamente com o que o usuário digitou (formatado pela máscara)
+  const handleTextChange = (maskedText: string) => {
     setFormattedValue(maskedText);
 
-    // 2. Converte para número e notifica o pai
-    const numericValue = rawText ? parseInt(rawText, 10) : undefined;
+    // Continua igual - Acessa o método através da instância referenciada
+    const rawValueString = (inputRef.current as TextInputMaskMethods | null)?.getRawValue();
+  
+    const numericValue = rawValueString ? parseInt(rawValueString, 10) : undefined;
+  
+    console.log('Masked Text:', maskedText);
+    console.log('Raw Value String (from ref):', rawValueString);
+    console.log('Numeric Value (cents):', numericValue);
+  
     onChangeValue(numericValue);
   };
 
@@ -114,6 +122,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
 
       {/* Componente TextInputMask */}
       <TextInputMask
+        ref={inputRef} // Associe a ref aqui
         type={'money'} // Define o tipo da máscara como monetária
         options={mergedOptions} // Passa as opções de formatação
         value={formattedValue} // Controla o valor exibido pelo estado
@@ -138,7 +147,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333', // Cor do texto do label
     marginBottom: 8, // Espaçamento entre label e input
-    // Adapte a fonte e cor conforme o design do seu app
+    fontFamily: 'OpenSans-Regular'
   },
   input: {
     borderWidth: 1,
@@ -151,6 +160,7 @@ const styles = StyleSheet.create({
     color: '#333',        // Cor do texto digitado
     textAlign: 'center',   // Centraliza o texto (similar ao protótipo)
     backgroundColor: '#fff', // Fundo branco
+    fontFamily: 'OpenSans-Regular'
   },
 });
 

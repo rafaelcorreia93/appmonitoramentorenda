@@ -271,8 +271,8 @@ const TimeSeriesChart: React.FC<TimeSeriesChartProps> = ({ dataList }) => {
         : finalChartData.datasetsSaldo;
 
     const chartTitle = activeChart === CHART_TYPES.BENEFICIO
-        ? 'Benefício Pago Anual'
-        : 'Saldo Inicial Anual';
+        ? 'Projeção do Benefício'
+        : 'Projeção do Saldo';
 
     const chartConfig = { /* ... (configuração como antes) ... */
         backgroundColor: '#ffffff',
