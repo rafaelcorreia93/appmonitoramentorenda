@@ -334,6 +334,7 @@ const TimeSeriesChart: React.FC<TimeSeriesChartProps> = ({ dataList }) => {
                 height={250}
                 chartConfig={chartConfig}
                 bezier
+                fromZero
                 style={styles.chartStyle}
                 yAxisInterval={1}
                 formatYLabel={formatYLabel}

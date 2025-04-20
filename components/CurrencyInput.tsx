@@ -1,110 +1,134 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet, TextInputProps } from 'react-native';
+import { View, Text, StyleSheet, TextInputProps, Platform } from 'react-native';
 import { TextInputMask, TextInputMaskOptionProp, TextInputMaskMethods } from 'react-native-masked-text';
 
-// Estendendo TextInputProps para poder passar outras props padrão do TextInput
+// ... (interface e outras partes do componente permanecem iguais) ...
 interface CurrencyInputProps extends TextInputProps {
   label: string;
   initialValue?: number; // Valor inicial em CENTAVOS (ex: 10000 para R$ 100,00)
   onChangeValue: (value: number | undefined) => void; // Callback com valor numérico em CENTAVOS
-  maskOptions?: TextInputMaskOptionProp; // Para customizar a máscara se necessário
+  maskOptions?: TextInputMaskOptionProp;
+  // A prop 'style' é herdada de TextInputProps, mas se quiser tipar explicitamente
+  // para o container ou algo assim, faria aqui. Geralmente, passar via ...rest
+  // para o TextInputMask é suficiente para o estilo do input em si.
 }
-
 const CurrencyInput: React.FC<CurrencyInputProps> = ({
   label,
   initialValue,
   onChangeValue,
   maskOptions,
-  style, // Permite passar estilos customizados para o input
-  ...rest // Restante das props do TextInput (placeholder, autoFocus, etc.)
+  style,
+  ...rest
 }) => {
-  const inputRef = useRef<TextInputMask>(null);
+  const inputRef = useRef<TextInputMask & TextInputMaskMethods>(null);
 
-  // Estado para o valor formatado (string) que será exibido no input
+  const defaultMaskOptions: TextInputMaskOptionProp = useMemo(() => ({
+    precision: 2,
+    separator: ',',
+    delimiter: '.',
+    unit: 'R$ ',
+    suffixUnit: '',
+  }), []);
 
-  // Opções padrão da máscara para Real Brasileiro (BRL)
-  const defaultMaskOptions: TextInputMaskOptionProp = {
-    precision: 2,        // 2 casas decimais
-    separator: ',',      // Separador decimal
-    delimiter: '.',      // Separador de milhar
-    unit: 'R$ ',         // Símbolo da moeda
-    suffixUnit: '',      // Nenhum sufixo após o valor
-  };
-
-  // Memoize as opções da máscara para estabilizar a dependência do useCallback/useEffect
   const mergedOptions = useMemo(() => ({
     ...defaultMaskOptions,
-    // Garante que as opções passadas não sobrescrevam com undefined
     ...(maskOptions ?? {})
-  }), [maskOptions]); // Recalcula apenas se maskOptions mudar
+  }), [defaultMaskOptions, maskOptions]);
 
-  const formatValue = useCallback((valueInCents: number | undefined): string => {
-    if (valueInCents === undefined || valueInCents === null) {
-      return '';
+  // Função auxiliar para converter string formatada (BRL) para centavos
+  const getCentsFromMaskedText = useCallback((text: string | null | undefined): number | undefined => {
+    if (!text) {
+        return undefined;
     }
-    const precision = mergedOptions.precision ?? 2;
-    const separator = mergedOptions.separator ?? ',';
-    const delimiter = mergedOptions.delimiter ?? '.';
-    const unit = mergedOptions.unit ?? 'R$ ';
 
-    const valueInReais = valueInCents / 100;
-    const fixedValue = valueInReais.toFixed(precision);
-    const parts = fixedValue.split('.');
-    const integerPart = parts[0];
-    const decimalPart = (parts[1] || '').padEnd(precision, '0');
-    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, delimiter);
+    const { unit = 'R$ ', delimiter = '.', separator = ',', precision = 2 } = mergedOptions;
 
-    if (precision === 0) {
-      return `${unit}${formattedInteger}`;
+    // 1. Remover unidade monetária e espaços
+    let numericString = text.replace(unit, '').trim();
+
+    // 2. Remover delimitadores de milhar
+    //    Precisamos escapar o ponto se ele for o delimitador, pois é um caractere especial em regex
+    const delimiterRegex = new RegExp(`\\${delimiter}`, 'g');
+    numericString = numericString.replace(delimiterRegex, '');
+
+    // 3. Substituir separador decimal por ponto (padrão para parseFloat)
+    numericString = numericString.replace(separator, '.');
+
+    // 4. Converter para número (float)
+    const floatValue = parseFloat(numericString);
+
+    // 5. Validar e converter para centavos
+    if (!isNaN(floatValue)) {
+        // Arredondar para evitar problemas de precisão de float e multiplicar por 100
+        const cents = Math.round(floatValue * 100);
+        return cents;
     }
-    return `${unit}${formattedInteger}${separator}${decimalPart}`;
+
+    // Retorna undefined se não conseguir parsear
+    return undefined;
+
   }, [mergedOptions]);
 
-    // --- Mudança Principal ---
-  // Inicializa o estado formattedValue UMA VEZ com o valor inicial formatado
-  const [formattedValue, setFormattedValue] = useState<string>(() => formatValue(initialValue));
 
-  // Ref para rastrear se é a primeira renderização
+  const formatValueFromCents = useCallback((valueInCents: number | undefined): string => {
+    // ...(função formatValueFromCents como antes)...
+    if (valueInCents === undefined || valueInCents === null || isNaN(valueInCents)) {
+        return '';
+    }
+    const { precision = 2, separator = ',', delimiter = '.', unit = 'R$ ' } = mergedOptions;
+    const cents = Math.round(valueInCents);
+    const valueInReais = cents / 100;
+    let numberAsString = valueInReais.toFixed(precision);
+    let [integerPart, decimalPart = ''] = numberAsString.split('.');
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, delimiter);
+    decimalPart = decimalPart.padEnd(precision, '0');
+
+    if (precision === 0) {
+        return `${unit}${integerPart}`;
+    }
+    return `${unit}${integerPart}${separator}${decimalPart}`;
+  }, [mergedOptions]);
+
+
+  const [formattedValue, setFormattedValue] = useState<string>(() =>
+    formatValueFromCents(initialValue)
+  );
+
   const isFirstRender = useRef(true);
 
-  // Efeito para sincronizar com MUDANÇAS EXTERNAS em initialValue
-  // APÓS a montagem inicial.
   useEffect(() => {
-    // Pula a primeira renderização, pois o useState já cuidou disso
     if (isFirstRender.current) {
-      isFirstRender.current = false; // Marca que a primeira renderização passou
-      return; // Não faz nada na primeira vez
+      isFirstRender.current = false;
+      return;
     }
+    // console.log('[EFFECT] Prop initialValue mudou para (cents):', initialValue);
+    const newFormattedValue = formatValueFromCents(initialValue);
+    // console.log('[EFFECT] Novo valor formatado:', newFormattedValue);
+    setFormattedValue(newFormattedValue);
+  }, [initialValue, formatValueFromCents]);
 
-    // Se initialValue mudar DEPOIS da montagem, atualiza o valor formatado
-    // Isso permite que o pai resete ou altere o valor programaticamente
-    console.log('Prop initialValue mudou para:', initialValue);
-    setFormattedValue(formatValue(initialValue));
+  // --- Handler de Mudança REESCRITO ---
+  // Agora calcula o valor a partir do maskedText
+  const handleTextChange = (maskedText: string) => { // Não precisamos mais do rawText aqui
+    console.log('--- handleTextChange ---');
+    console.log('Recebido maskedText:', maskedText);
 
-  }, [initialValue, formatValue]); // Depende de initialValue e da função formatValue estável
-
-
-  // Handler de mudança: AGORA é o principal responsável por atualizar formattedValue
-  const handleTextChange = (maskedText: string) => {
+    // 1. Atualiza o estado que controla o input VISUALMENTE
+    //    É importante fazer isso para que o usuário veja a máscara funcionando
     setFormattedValue(maskedText);
 
-    // Continua igual - Acessa o método através da instância referenciada
-    const rawValueString = (inputRef.current as TextInputMaskMethods | null)?.getRawValue();
-  
-    const numericValue = rawValueString ? parseInt(rawValueString, 10) : undefined;
-  
-    console.log('Masked Text:', maskedText);
-    console.log('Raw Value String (from ref):', rawValueString);
-    console.log('Numeric Value (cents):', numericValue);
-  
+    // 2. Calcula o valor numérico (em centavos) a partir do maskedText atualizado
+    const numericValue = getCentsFromMaskedText(maskedText);
+
+    console.log('Valor numérico final (cents) extraído do maskedText:', numericValue);
+
+    // 3. Chama o callback do pai com o valor em centavos calculado
     onChangeValue(numericValue);
   };
 
-  // Calcula o placeholder dinamicamente baseado nas opções atuais
+
   const placeholderText = useMemo(() => {
-      const precision = mergedOptions.precision ?? 2;
-      const separator = mergedOptions.separator ?? ',';
-      const unit = mergedOptions.unit ?? 'R$ ';
+      const { precision = 2, separator = ',', unit = 'R$ '} = mergedOptions;
       const zeroDecimal = '0'.repeat(precision);
       if (precision === 0) {
           return `${unit}0`;
@@ -112,31 +136,25 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
       return `${unit}0${separator}${zeroDecimal}`;
   }, [mergedOptions]);
 
-
-  console.log("Render CurrencyInput, formattedValue:", formattedValue); // Log para depuração
-
   return (
     <View style={styles.container}>
-      {/* Label do campo */}
       <Text style={styles.label}>{label}</Text>
-
-      {/* Componente TextInputMask */}
       <TextInputMask
-        ref={inputRef} // Associe a ref aqui
-        type={'money'} // Define o tipo da máscara como monetária
-        options={mergedOptions} // Passa as opções de formatação
-        value={formattedValue} // Controla o valor exibido pelo estado
-        onChangeText={handleTextChange} // Handler para quando o texto muda
-        keyboardType="numeric" // Mostra o teclado numérico para o usuário
-        placeholder={mergedOptions.unit ? `${mergedOptions.unit}0${mergedOptions.separator}00` : 'R$ 0,00'} // Placeholder dinâmico
-        style={[styles.input, style]} // Aplica estilos padrão e customizados
-        maxLength={18} // Limita um pouco o tamanho para evitar valores absurdos
-        {...rest} // Passa outras props como autoFocus, etc.
+        ref={inputRef}
+        type={'money'}
+        options={mergedOptions}
+        value={formattedValue}
+        // includeRawValueInChangeText={true} // NÃO PRECISAMOS MAIS DESTA PROP
+        onChangeText={handleTextChange} // Handler agora só usa maskedText
+        keyboardType="numeric"
+        placeholder={placeholderText}
+        style={[styles.input, style]}
+        maxLength={18}
+        {...rest}
       />
     </View>
   );
 };
-
 // Estilos do componente
 const styles = StyleSheet.create({
   container: {

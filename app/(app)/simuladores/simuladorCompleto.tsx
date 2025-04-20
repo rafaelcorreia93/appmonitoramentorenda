@@ -150,7 +150,7 @@ export default function SimuladorCompletoScreen() {
   // Função que será passada para o CurrencyInput para receber o valor
   const handleValorChange = (novoValorCentavos: number | undefined) => {
     console.log('Valor numérico recebido (centavos):', novoValorCentavos);
-    setValorRenda(novoValorCentavos);
+    setValorRenda(Number(novoValorCentavos)/100);
   };
 
   const handleSubmit = async (): Promise<void> => { // Tipo de retorno void
@@ -330,8 +330,8 @@ export default function SimuladorCompletoScreen() {
           {parametroSimulacao &&
           <View style={styles.cardController}>
             <Text style={styles.label}>Parâmetros de Simulação</Text>
-            <Text style={styles.label}>Tipo de Renda: {parametroSimulacao?.descRenda}</Text>
-            <Text style={styles.label}>Parâmetro de Renda: 
+            <Text style={styles.parametroLabel}>Tipo de Renda: {parametroSimulacao?.descRenda}</Text>
+            <Text style={styles.parametroLabel}>Parâmetro de Renda: 
             {parametroSimulacao.tipoRenda === 'VALOR_FIXO' && ' ' + formatCurrency(parametroSimulacao?.parametroRenda) + ' Reais'}
             {parametroSimulacao.tipoRenda === 'PERCENTUAL_SALDO_ANUAL' && ' ' +  parametroSimulacao?.parametroRenda + ' %'}
             {parametroSimulacao.tipoRenda === 'PRAZO_CERTO' && ' ' + parametroSimulacao?.parametroRenda + ' Anos'}
@@ -457,5 +457,9 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontSize: 16,
     color: '#333'
+  },
+  parametroLabel: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 15
   }
 });
