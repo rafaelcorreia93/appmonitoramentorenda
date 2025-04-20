@@ -7,7 +7,7 @@ export default function SimuladorInteligenteScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Simulador Inteligente</Text>
+      <Text style={styles.title}>Em breve Simulador Inteligente</Text>
       <Button title="Voltar (programático)" onPress={() => router.back()} />
     </View>
   );
