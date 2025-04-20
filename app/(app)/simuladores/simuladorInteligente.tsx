@@ -80,8 +80,16 @@ export default function SimuladorInteligenteScreen() {
     }
   }, [prazo, dataNascimento]);
 
-  const handlePrazoChange = (value: number) => {
-    setPrazo(value);
+  // Updated to handle number | null
+  const handlePrazoChange = (value: number | null) => {
+    if (value === null) {
+      // If input is cleared, default to minimum prazo
+      setPrazo(MIN_PRAZO);
+    } else {
+      // Ensure value stays within bounds
+      const newPrazo = Math.max(MIN_PRAZO, Math.min(value, MAX_PRAZO));
+      setPrazo(newPrazo);
+    }
   };
 
   const handleAvancar = () => {
@@ -110,12 +118,13 @@ export default function SimuladorInteligenteScreen() {
       </Text>
 
       <View style={styles.inputSection}>
-        <Text style={styles.label}>Prazo desejado (em anos)</Text>
+        {/* Label is now passed as a prop, and onChangeValue is connected */}
         <IntegerInput
+          label="Prazo desejado (em anos)"
           value={prazo}
-          onChange={handlePrazoChange}
-          min={MIN_PRAZO}
-          max={MAX_PRAZO}
+          minValue={MIN_PRAZO}
+          maxValue={MAX_PRAZO}
+          onChangeValue={handlePrazoChange} // Pass the handler function
         />
         <Text style={styles.infoText}>
           Escolha um prazo entre {MIN_PRAZO} e {MAX_PRAZO} anos.
@@ -176,12 +185,13 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     alignItems: 'center', // Center IntegerInput
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 15, // Increase space before input
-    color: '#444',
-  },
+  // Removed the separate label style as it's handled by the component now potentially
+  // label: {
+  //   fontSize: 16,
+  //   fontWeight: '600',
+  //   marginBottom: 15, // Increase space before input
+  //   color: '#444',
+  // },
    infoText: {
     fontSize: 12,
     color: '#666',
